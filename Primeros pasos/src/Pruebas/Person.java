@@ -6,11 +6,13 @@
 package Pruebas;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Juan Miguel Arias Mejias
  */
+@XmlRootElement // Indica que JAXB debería generar un documento XML (la raíz) a partir de una clase Java
 public class Person implements Serializable {
 
     private String name; // Identificador 'unico
