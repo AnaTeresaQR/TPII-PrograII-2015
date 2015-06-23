@@ -1,0 +1,3 @@
+http://josedeveloper.com/2012/03/04/serializacion-de-objetos-java-en-xml/
+http://www.josealopezpastor.com/2013/09/jaxb-introduccion-crear-un-archivo-xml.html
+http://www.josealopezpastor.com/2013/09/jaxb-introduccion-crear-un-objeto.html
