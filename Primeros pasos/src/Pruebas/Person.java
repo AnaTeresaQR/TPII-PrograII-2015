@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class Person implements Serializable {
 
-    private String name;
+    private String name; // Identificador 'unico
     private String email;
     private String password;
 
