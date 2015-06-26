@@ -2,18 +2,24 @@
 <historieta>
     <id>Esa historia...</id>
     <users>
-        <user>
+        <autor>
+            <nick>Nena</nick>
+            <name>Amanda</name>
+            <email>Agugu</email>
+            <password>234</password>
+        </autor>
+        <contribuyentes>
             <nick>JM</nick>
             <name>Juan</name>
             <email>juan@gmail</email>
             <password>123</password>
-        </user>
-        <user>
+        </contribuyentes>
+        <contribuyentes>
             <nick>Te</nick>
             <name>Tere</name>
             <email>tere@gmail</email>
             <password>321</password>
-        </user>
+        </contribuyentes>
     </users>
     <personajes>
         <personaje>

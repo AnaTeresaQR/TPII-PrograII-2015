@@ -7,12 +7,11 @@ package Pruebas;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -20,12 +19,21 @@ import javax.xml.bind.annotation.XmlSeeAlso;
  */
 @XmlRootElement
 @XmlSeeAlso({User.class})
+@XmlType(propOrder = {"autor", "users"})
 public class Users {
 
-    @XmlElement(name = "user")
+    @XmlElement
+    private User autor;
+
+    @XmlElement(name = "contribuyentes")
     private List<User> users;
 
     public Users() {
+        users = new ArrayList<>();
+    }
+
+    public Users(User autor) {
+        this.autor = autor;
         users = new ArrayList<>();
     }
 

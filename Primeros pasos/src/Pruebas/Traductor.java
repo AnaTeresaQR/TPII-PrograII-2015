@@ -30,8 +30,9 @@ public class Traductor {
         // Creo historieta
         Historieta historieta = new Historieta("Esa historia...");
 
+        User amanda = new User("Nena", "Amanda", "Agugu", "234");
         // Lista de usuarios
-        Users users = new Users();
+        Users users = new Users(amanda);
         // Creo  los usuarios
         User miguel = new User("JM", "Juan", "juan@gmail", "123");
         users.add(miguel);
@@ -45,7 +46,7 @@ public class Traductor {
         Personaje personaje2 = new Personaje("Tere", "Muy Feliz", "Dirreccion de imagen");
         personajes.add(personaje1);
         personajes.add(personaje2);
-        
+
         historieta.setPersonajes(personajes);
 
         // Mostramos el documento XML generado por la salida estandar
