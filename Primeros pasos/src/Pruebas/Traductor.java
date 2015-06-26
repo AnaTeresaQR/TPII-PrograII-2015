@@ -22,14 +22,14 @@ import javax.xml.bind.Unmarshaller;
  */
 public class Traductor {
     
-    private static final String PERSON_DAT_FILE = "person.dat";
+    private static final String PERSON_DAT_FILE = "Kevin.dat";
     
     public static void main(String[] args) throws JAXBException, FileNotFoundException, IOException {
-        JAXBContext context = JAXBContext.newInstance(Person.class);
+        JAXBContext context = JAXBContext.newInstance(User.class);
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         
-        Person person = new Person("Juan", "juanmiguel.arias@ucrso.info", "123");
+        User person = new User("Kevin", "kevin@gmail.com", "321");
         
         // Mostramos el documento XML generado por la salida estandar
         marshaller.marshal(person, System.out);
@@ -41,7 +41,7 @@ public class Traductor {
         
         Unmarshaller unmarshaller = context.createUnmarshaller();
         // Deserealizamos a partir de un documento XML
-        Person personAux = (Person) unmarshaller.unmarshal(new File(PERSON_DAT_FILE));
+        User personAux = (User) unmarshaller.unmarshal(new File(PERSON_DAT_FILE));
         System.out.println("-------------- Persona cargada desde fichero XML -------------");
         // Mostramos por lenia de comandos el objeto JAva obtenido
         // Producto de la deserializaci'on
