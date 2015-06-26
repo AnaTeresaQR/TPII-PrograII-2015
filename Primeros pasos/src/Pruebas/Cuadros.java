@@ -7,10 +7,7 @@ package Pruebas;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
@@ -19,22 +16,15 @@ import javax.xml.bind.annotation.XmlSeeAlso;
  * @author Juan Miguel Arias Mejias
  */
 @XmlRootElement
-@XmlSeeAlso({User.class})
-public class Users {
+@XmlSeeAlso(Personaje.class)
+public class Cuadros extends ArrayList<Cuadro> {
 
-    @XmlElement(name = "user")
-    private List<User> users;
-
-    public Users() {
-        users = new ArrayList<>();
+    public Cuadros() {
     }
 
-    public void add(User user) {
-        users.add(user);
-    }
-
-    public void remove(User user) {
-        users.remove(user);
+    @XmlElement(name = "cuadro")
+    public List<Cuadro> getUsers() {
+        return this;
     }
 
 }

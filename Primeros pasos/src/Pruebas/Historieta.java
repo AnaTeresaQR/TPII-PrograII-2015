@@ -11,17 +11,46 @@ import javax.xml.bind.annotation.*;
  *
  * @author Juan Miguel Arias Mejias
  */
-@XmlType(propOrder = {"id", "users", "personajes", "cuadros"})
+@XmlType(propOrder = {"id", "users", "personajes"})
 @XmlRootElement(name = "historieta")
 public class Historieta {
 
     @XmlID
-    private int id;
+    private String id;
     @XmlElement
-    private User[] users;
+    private Users users;
     @XmlElement
-    private Personaje personajes[];
-    @XmlElement
-    private String[] cuadros;
+    private Personajes personajes;
+
+    public Historieta() {
+        users = new Users();
+        personajes = new Personajes();
+    }
+
+    public Historieta(String id) {
+        this.id = id;
+        users = new Users();
+        personajes = new Personajes();
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+
+    public String getIdHistorieta() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Personajes getPersonajesH() {
+        return personajes;
+    }
+
+    public void setPersonajes(Personajes personajes) {
+        this.personajes = personajes;
+    }
 
 }

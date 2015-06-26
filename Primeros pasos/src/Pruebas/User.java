@@ -6,7 +6,7 @@
 package Pruebas;
 
 import java.io.Serializable;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -14,9 +14,9 @@ import javax.xml.bind.annotation.XmlType;
  * @author Juan Miguel Arias Mejias
  */
 @XmlType(propOrder = {"nick", "name", "email", "password"})
-@XmlRootElement // Indica que JAXB debería generar un documento XML (la raíz) a partir de una clase Java
 public class User implements Serializable {
 
+    @XmlID
     private String nick; // Unico
     private String name;
     private String email;
@@ -29,7 +29,10 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getNick() {
+    public User() {
+    }
+
+    public String getIDNick() {
         return nick;
     }
 

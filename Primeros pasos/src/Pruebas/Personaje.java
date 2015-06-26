@@ -5,26 +5,32 @@
  */
 package Pruebas;
 
-import java.awt.Image;
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Juan Miguel Arias Mejias
  */
+@XmlType(propOrder = {"name", "personalidad", "foto"})
 public class Personaje implements Serializable {
 
+    @XmlID
     private String name;
     private String personalidad;
-    private Image foto;
+    private String foto;
 
-    public Personaje(String name, String personalidad, Image foto) {
+    public Personaje(String name, String personalidad, String foto) {
         this.name = name;
         this.personalidad = personalidad;
         this.foto = foto;
     }
 
-    public String getName() {
+    public Personaje() {
+    }
+
+    public String getNameP() {
         return name;
     }
 
@@ -40,11 +46,11 @@ public class Personaje implements Serializable {
         this.personalidad = personalidad;
     }
 
-    public Image getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(Image foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 

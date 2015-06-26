@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<historieta>
+    <id>Esa historia...</id>
+    <users>
+        <user>
+            <nick>JM</nick>
+            <name>Juan</name>
+            <email>juan@gmail</email>
+            <password>123</password>
+        </user>
+        <user>
+            <nick>Te</nick>
+            <name>Tere</name>
+            <email>tere@gmail</email>
+            <password>321</password>
+        </user>
+    </users>
+    <personajes>
+        <personaje>
+            <name>Juan</name>
+            <personalidad>Feliz</personalidad>
+            <foto>Dirreccion de imagen</foto>
+        </personaje>
+        <personaje>
+            <name>Tere</name>
+            <personalidad>Muy Feliz</personalidad>
+            <foto>Dirreccion de imagen</foto>
+        </personaje>
+    </personajes>
+</historieta>
