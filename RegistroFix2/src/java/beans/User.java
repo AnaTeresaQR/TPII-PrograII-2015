@@ -16,7 +16,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(propOrder = {"nick", "name", "email", "password"})
 public class User implements Serializable {
 
-    @XmlID
     private String nick; // Unico
     private String name;
     private String email;
@@ -32,7 +31,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public String getIDNick() {
+    public String getNick() {
         return nick;
     }
 

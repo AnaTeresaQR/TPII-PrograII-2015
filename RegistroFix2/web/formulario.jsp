@@ -1,9 +1,11 @@
+<%-- 
+    Document   : formulario
+    Created on : 27/06/2015, 03:50:48 PM
+    Author     : Ana Teresa
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Registro Comics</title>
@@ -16,7 +18,7 @@ and open the template in the editor.
 
             <p>Para registrarse es necesario llenar el siguiente formulario</p>
 
-            <form id="form-registro" action="Registro.jsp" method="get">
+            <form id="form-registro" method="get" action="Registro.jsp">
                 <p>Complete los siguientes espacios</p>
 
                 <label>Nick: </label><br>
@@ -34,11 +36,10 @@ and open the template in the editor.
                 <label>Password: </label><br>
                 <input type="text" name="password">
                 <br><br>
-                
+
                 <input type='submit' value='Registrar'>
                 <input type='reset' value="Limpiar registro">
             </form>
-
         </div>
     </body>
 </html>
