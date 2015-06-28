@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="estiloRegistro">
     </head>
     <body>
-        <div id="ResultadoRegistro">
+        <Center id="ResultadoRegistro">
             <h1>Bienvenido a nuestra Web!</h1>
             <jsp:useBean id='user' scope="session" class="beans.User"/>
 
@@ -25,6 +25,7 @@
             <p>Nick: <jsp:getProperty name='user' property="nick"/></p>
             <p>Email: <jsp:getProperty name='user' property="email"/></p>
             <p>Password: <jsp:getProperty name='user' property="password"/></p>
-        </div>
+            
+        </Center>
     </body>
 </html>
