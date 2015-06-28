@@ -19,15 +19,11 @@
 
             <p>Para registrarse es necesario llenar el siguiente formulario</p>
 
-            <form id="form"  onsubmit="return validacionesformulario(this)" method="get" action="Registro.jsp">
+            <form id="form"  onsubmit="return formulario(this)" method="get" action="Registro.jsp">
                 <p>Complete los siguientes espacios</p>
 
                 <label>Nick: </label><br>
                 <input type="text" name="nick">
-                <br><br>
-
-                <label>Nombre: </label><br>
-                <input type="text" name="nombre">
                 <br><br>
 
                 <label>Email: </label><br>

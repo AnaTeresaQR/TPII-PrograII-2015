@@ -1,21 +1,24 @@
 
-function validacionesformulario(form) {
-    if (form.nick.value == "") {
-        alert('El nick esta vacío');
-        form.nick.focus();
-        return false;
-    }
-    if (form.nombre.value == "") {
-        alert('El nombre esta vacío');
-        form.nombre.focus();
-        return false;
-    }
+function formulario(form) {
+    var expNick = new RegExp("([_A-Za-z0-9]){5,12}");
     if (form.email.value == "") {
         alert('El email no puede estar vacío');
         form.email.focus();
         return false;
     }
-    return true;
+    if (form.password.value == "") {
+        alert('La contraseña no puede estar vacía');
+        form.password.focus();
+        return false;
+    }
+    if (expNick.test(form.nick.value)) {
+        alert('formato correcto');
+        return true;
+    } else {
+        alert('El nick esta vacío o contiene formato incorrecto');
+        form.nick.focus();
+        return false;
+    }
 }
 
 
