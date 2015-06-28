@@ -26,10 +26,6 @@
                 <input type="text" name="nick">
                 <br><br>
 
-                <label>Nombre: </label><br>
-                <input type="text" name="nombre">
-                <br><br>
-
                 <label>Email: </label><br>
                 <input type="text" name="email">
                 <br><br>
