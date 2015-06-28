@@ -1,5 +1,5 @@
 
-function formulario(form) {
+function validacionesformulario(form) {
     if (form.nick.value == "") {
         alert('El nick esta vacío');
         form.nick.focus();

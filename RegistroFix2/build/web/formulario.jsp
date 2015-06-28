@@ -12,13 +12,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' type="text/css" href='estiloRegistro.css'>
+        <script type="text/javascript" src="validacionesRegistro.js"></script> 
     </head>
     <body>
         <div id="registro">
 
             <p>Para registrarse es necesario llenar el siguiente formulario</p>
 
-            <form id="form"  onsubmit="return formulario(this)" method="get" action="Registro.jsp">
+            <form id="form"  onsubmit="return validacionesformulario(this)" method="get" action="Registro.jsp">
                 <p>Complete los siguientes espacios</p>
 
                 <label>Nick: </label><br>
@@ -34,7 +35,7 @@
                 <br><br>
 
                 <label>Password: </label><br>
-                <input type="text" name="password">
+                <input type="password" name="password">
                 <br><br>
 
                 <input type='submit' value='Registrar'>
