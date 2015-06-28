@@ -12,33 +12,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' type="text/css" href='estiloRegistro.css'>
-        <script>
-            function formulario(form) {
-                if (form.nick.value == "") {
-                    alert('El nick esta vacío');
-                    form.nick.focus();
-                    return false;
-                }
-                if (form.nombre.value == "") {
-                    alert('El nombre esta vacío');
-                    form.nombre.focus();
-                    return false;
-                }
-                if (form.email.value == "") {
-                    alert('El email no puede estar vacío');
-                    form.email.focus();
-                    return false;
-                }
-                return true;
-            }
-        </script>
     </head>
     <body>
         <div id="registro">
 
             <p>Para registrarse es necesario llenar el siguiente formulario</p>
-            <form id="form"  onsubmit="return formulario(this)" method="get" action="Registro.jsp">
+
+            <form id="form-registro" method="get" action="Registro.jsp">
                 <p>Complete los siguientes espacios</p>
+
                 <label>Nick: </label><br>
                 <input type="text" name="nick">
                 <br><br>
@@ -52,11 +34,11 @@
                 <br><br>
 
                 <label>Password: </label><br>
-                <input type="password" name="password">
+                <input type="text" name="password">
                 <br><br>
+
                 <input type='submit' value='Registrar'>
                 <input type='reset' value="Limpiar registro">
-
             </form>
         </div>
     </body>
