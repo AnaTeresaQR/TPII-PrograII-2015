@@ -26,8 +26,9 @@
         <p>Nick: <jsp:getProperty name='user' property="nick"/></p>
         <p>Email: <jsp:getProperty name='user' property="email"/></p>
         <p>Password: <jsp:getProperty name='user' property="password"/></p>
+
         <%DataBaseManager manager = new DataBaseManager();
-            manager.registrar("users", user);
+            manager.registrar(DataBaseManager.getNOMBRE_TABLA(), user);
         %>
     </Center>
 </body>

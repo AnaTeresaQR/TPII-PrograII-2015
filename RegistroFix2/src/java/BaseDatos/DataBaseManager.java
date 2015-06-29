@@ -13,6 +13,8 @@ import java.sql.Statement;
  */
 public class DataBaseManager {
 
+    static final String NOMBRE_TABLA = "users";
+
     public DataBaseManager() {
         cargarDriver();
     }
@@ -202,6 +204,10 @@ public class DataBaseManager {
 
     public String sqlFormat(String value) {
         return "\"" + value + "\"";
+    }
+
+    public static String getNOMBRE_TABLA() {
+        return NOMBRE_TABLA;
     }
 
 }
