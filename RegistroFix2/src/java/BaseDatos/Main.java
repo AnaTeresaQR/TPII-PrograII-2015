@@ -1,5 +1,8 @@
 package BaseDatos;
 
+import beans.User;
+import java.sql.SQLException;
+
 /**
  *
  * @author Ana Teresa Quesada Ramírez
@@ -7,12 +10,11 @@ package BaseDatos;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        final String nombreTabla = "users";
+    public static void main(String[] args) throws SQLException {
         DataBaseManager base = new DataBaseManager();
-        System.out.println(base.contenidoTabla("users"));
+        System.out.println(base.contenidoTabla());
 
-        //        User user = new User("tere", "tere@gmail.com", "tere");
+        User user = new User("tere", "tere@gmail.com", "tere");
         //        base.registrar("users", user);
         //---------------------------------------------------------------------------------
         //id: 1 nick: juan email: root@root.com password: root
@@ -20,8 +22,8 @@ public class Main {
         //id: 5 nick: root3 email: root3@root.com password: root
         //id: 6 nick: tere email: tere@gmail.com password: tere
         //---------------------------------------------------------------------------------
-        base.editarPassword(nombreTabla, "root3", "root", "contraseñaModificada");
-        System.out.println(base.contenidoTabla(nombreTabla));
+        base.registrar(user);
+        System.out.println(base.contenidoTabla());
 
     }
 

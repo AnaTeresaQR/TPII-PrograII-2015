@@ -4,9 +4,11 @@
     Author     : Juan
 --%>
 
+<%@page import="java.sql.SQLException"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="beans.User" %>
 <%@page import="BaseDatos.DataBaseManager" %>
+<%@page errorPage="RegistroErrorPage.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,7 +30,7 @@
         <p>Password: <jsp:getProperty name='user' property="password"/></p>
 
         <%DataBaseManager manager = new DataBaseManager();
-            manager.registrar(DataBaseManager.getNOMBRE_TABLA(), user);
+                manager.registrar(user);
         %>
     </Center>
 </body>

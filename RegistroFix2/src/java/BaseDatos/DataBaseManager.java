@@ -16,7 +16,7 @@ import java.sql.Statement;
  */
 public class DataBaseManager {
 
-    static final String TABLE_NAME = "users"; // nombre de la tabla de usuarios
+    final String TABLE_NAME = "users"; // nombre de la tabla de usuarios
 
     public DataBaseManager() {
         loadDriver();
@@ -60,31 +60,24 @@ public class DataBaseManager {
         return st;
     }
 
-    public void registrar(String tabla, User user) {
+    public void registrar(User user) throws SQLException {
 
         Statement st = getStatement();
         String nick = sqlFormat(user.getNick());
         String email = sqlFormat(user.getEmail());
         String password = sqlFormat(user.getPassword());
 
-        String sql = "insert into " + tabla + " (nick, email, password) values(" + nick + ", " + email + ", " + password + ")";
-
-        try {
-
-            st.executeUpdate(sql);
-
-        } catch (SQLException e) {
-            System.err.println(e);
-        }
+        String sql = "insert into " + TABLE_NAME + " (nick, email, password) values(" + nick + ", " + email + ", " + password + ")";
+        st.executeUpdate(sql);
     }
 
-    public String contenidoTabla(String tabla) {
+    public String contenidoTabla() {
 
         Statement st = getStatement();
         StringBuilder sb = new StringBuilder();
         try {
             // select * from tabla
-            ResultSet rs = st.executeQuery("select * from " + tabla);
+            ResultSet rs = st.executeQuery("select * from " + TABLE_NAME);
             while (rs.next()) {
                 sb.append("id: ").append((int) rs.getObject("id"))
                         .append(" nick: ").append((String) rs.getObject("nick"))
@@ -100,11 +93,11 @@ public class DataBaseManager {
         return sb.toString();
     }
 
-    public User login(String tabla, String identificador, String password) {
+    public User login(String identificador, String password) {
 
         Statement st = getStatement();
-        User userNick = nickLog(tabla, identificador);
-        User userEmail = emailLog(tabla, identificador);
+        User userNick = nickLog(identificador);
+        User userEmail = emailLog(identificador);
 
         if (userNick != null) {
 
@@ -126,10 +119,10 @@ public class DataBaseManager {
         return null;
     }
 
-    public void editarNick(String tabla, String nickAntig, String nuevo) {
+    public void editarNick(String nickAntig, String nuevo) {
         Statement st = getStatement();
         String nickNuevo = sqlFormat(nuevo);
-        String sql = "update " + tabla + " set nick = " + nickNuevo + " where nick = " + sqlFormat(nickAntig);
+        String sql = "update " + TABLE_NAME + " set nick = " + nickNuevo + " where nick = " + sqlFormat(nickAntig);
         try {
             st.executeUpdate(sql);
         } catch (SQLException e) {
@@ -137,10 +130,10 @@ public class DataBaseManager {
         }
     }
 
-    public void editarPassword(String tabla, String nick, String passwordAnt, String nuevo) {
+    public void editarPassword(String nick, String passwordAnt, String nuevo) {
         Statement st = getStatement();
         String passwordNueva = sqlFormat(nuevo);
-        String sql = "update " + tabla + " set password = " + passwordNueva + " where nick = " + sqlFormat(nick);
+        String sql = "update " + TABLE_NAME + " set password = " + passwordNueva + " where nick = " + sqlFormat(nick);
         try {
             st.executeUpdate(sql);
         } catch (SQLException e) {
@@ -148,10 +141,10 @@ public class DataBaseManager {
         }
     }
 
-    public void editarEmail(String tabla, String emailAntig, String nuevo) {
+    public void editarEmail(String old_email, String new_email) {
         Statement st = getStatement();
-        String emailNuevo = sqlFormat(nuevo);
-        String sql = "update " + tabla + " set email = " + emailNuevo + " where email = " + sqlFormat(emailAntig);
+        String emailNuevo = sqlFormat(new_email);
+        String sql = "update " + TABLE_NAME + " set email = " + emailNuevo + " where email = " + sqlFormat(old_email);
         try {
             st.executeUpdate(sql);
         } catch (SQLException e) {
@@ -159,12 +152,12 @@ public class DataBaseManager {
         }
     }
 
-    private User nickLog(String tabla, String nick) {
+    private User nickLog(String nick) {
 
         Statement st = getStatement();
         User user = null;
 
-        String sql = "select * from " + tabla + " where nick = " + sqlFormat(nick);
+        String sql = "select * from " + TABLE_NAME + " where nick = " + sqlFormat(nick);
 
         try {
             ResultSet rs = st.executeQuery(sql);
@@ -182,12 +175,12 @@ public class DataBaseManager {
         return null;
     }
 
-    private User emailLog(String tabla, String email) {
+    private User emailLog(String email) {
 
         Statement st = getStatement();
         User user = null;
 
-        String sql = "select * from " + tabla + " where email = " + sqlFormat(email);
+        String sql = "select * from " + TABLE_NAME + " where email = " + sqlFormat(email);
 
         try {
             ResultSet rs = st.executeQuery(sql);
@@ -207,10 +200,6 @@ public class DataBaseManager {
 
     public String sqlFormat(String value) {
         return "\"" + value + "\"";
-    }
-
-    public static String getTABLE_NAME() {
-        return TABLE_NAME;
     }
 
 }
