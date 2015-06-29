@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package BaseDatos;
 
 import beans.User;
@@ -82,20 +77,15 @@ public class DataBaseManager {
 
         Statement st = getStatement();
         StringBuilder sb = new StringBuilder();
-
         try {
-
             // select * from tabla
             ResultSet rs = st.executeQuery("select * from " + tabla);
-
             while (rs.next()) {
-
                 sb.append("id: ").append((int) rs.getObject("id"))
                         .append(" nick: ").append((String) rs.getObject("nick"))
                         .append(" email: ").append((String) rs.getObject("email"))
                         .append(" password: ").append((String) rs.getObject("password"))
                         .append("\n");
-
             }
             rs.close();
         } catch (SQLException e) {
@@ -113,7 +103,7 @@ public class DataBaseManager {
 
         if (userNick != null) {
 
-            // Se enncontro
+            // Se encontro
             if (userNick.getPassword().equals(password)) {
                 return userNick;
             }
@@ -132,7 +122,7 @@ public class DataBaseManager {
     }
 
     public void editarNick(String tabla, String nuevo) {
-        // Tere hacer
+        
     }
 
     public void editarPassword(String tabla, String nuevo) {
