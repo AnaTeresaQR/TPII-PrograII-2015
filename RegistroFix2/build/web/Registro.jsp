@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="beans.User" %>
+<%@page import="BaseDatos.DataBaseManager" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,18 +15,20 @@
         <link rel="stylesheet" type="text/css" href="estiloRegistro">
     </head>
     <body>
-        <Center id="ResultadoRegistro">
-            <h1>Bienvenido a nuestra Web!</h1>
-            <jsp:useBean id='user' scope="session" class="beans.User"/>
+    <Center id="ResultadoRegistro">
+        <h1>Bienvenido a nuestra Web!</h1>
+        <jsp:useBean id='user' scope="session" class="beans.User"/>
 
-            <jsp:setProperty name='user' property="nick" param="nick"/>
-            <jsp:setProperty name='user' property="email" param="email"/>
-            <jsp:setProperty name='user' property="password" param="password"/>
+        <jsp:setProperty name='user' property="nick" param="nick"/>
+        <jsp:setProperty name='user' property="email" param="email"/>
+        <jsp:setProperty name='user' property="password" param="password"/>
 
-            <p>Nick: <jsp:getProperty name='user' property="nick"/></p>
-            <p>Email: <jsp:getProperty name='user' property="email"/></p>
-            <p>Password: <jsp:getProperty name='user' property="password"/></p>
-            
-        </Center>
-    </body>
+        <p>Nick: <jsp:getProperty name='user' property="nick"/></p>
+        <p>Email: <jsp:getProperty name='user' property="email"/></p>
+        <p>Password: <jsp:getProperty name='user' property="password"/></p>
+        <%DataBaseManager manager = new DataBaseManager();
+            manager.registrar("users", user);
+        %>
+    </Center>
+</body>
 </html>
