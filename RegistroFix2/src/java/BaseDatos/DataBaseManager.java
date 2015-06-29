@@ -121,10 +121,10 @@ public class DataBaseManager {
         return null;
     }
 
-    public void editarNick(String tabla, String nickAnt , String nuevo) {
+    public void editarNick(String tabla, String nickAnt, String nuevo) {
         Statement st = getStatement();
         String nickNuevo = sqlFormat(nuevo);
-        String sql = "update " + tabla + " set nick = " + nickNuevo + " where nick = " ;
+        String sql = "update " + tabla + " set nick = " + nickNuevo + " where nick = " + sqlFormat(nickAnt);
         try {
             st.executeUpdate(sql);
         } catch (SQLException e) {
@@ -132,7 +132,7 @@ public class DataBaseManager {
         }
     }
 
-    public void editarPassword(String tabla, String nuevo) {
+    public void editarPassword(String tabla, String nick, String passwordAnt, String nuevo) {
         // Tere hacer
     }
 

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package BaseDatos;
 
 import beans.User;
@@ -14,13 +9,16 @@ import beans.User;
 public class Main {
 
     public static void main(String[] args) {
+        final String  nombreTabla = "users";
         DataBaseManager base = new DataBaseManager();
         System.out.println(base.contenidoTabla("users"));
-        
-        User user = new User("tere", "tere@gmail.com", "tere");
-        base.registrar("users", user);
-        
+
+//        User user = new User("tere", "tere@gmail.com", "tere");
+//        base.registrar("users", user);
+
+        base.editarNick(nombreTabla, "root", "juan");
         System.out.println(base.contenidoTabla("users"));
+        
     }
 
 }
