@@ -1,17 +1,16 @@
 function formulario(form) {
     var resultadoNick = validarNick(form);
-
-    if (form.password.value == "") {
-        alert('La contraseña no puede estar vacía');
-        form.password.focus();
+    var resultadoEmail = validarEmail(form);
+    var resultadoPassword = validarPassword(form);
+    if (resultadoNick && resultadoEmail && resultadoPassword) {
+        return true;
+    } else {
         return false;
     }
-
 }
 function validarNick(form) {
     var expNick = new RegExp("^[_A-Za-z0-9]{5,12}$");
     if (expNick.test(form.nick.value)) {
-        alert('formato correcto');
         return true;
     } else {
         alert('El nick esta vacío o contiene formato incorrecto');
@@ -22,7 +21,6 @@ function validarNick(form) {
 function validarEmail(form) {
     var expEmail = new RegExp("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
     if (expEmail.test(form.email.value)) {
-        alert('formato email correcto');
         return true;
     } else {
         alert('El email esta vacío o contiene formato incorrecto');
@@ -30,6 +28,17 @@ function validarEmail(form) {
         return false;
     }
 }
+function validarPassword(form) {
+    var expPassword = new RegExp("^[a-zA-Z]+[0-9]+$");
+    if (expPassword.test(form.password.value) && form.password.value >= 5) {
+        return true;
+    } else {
+        alert('El password esta vacío o contiene formato incorrecto');
+        form.password.focus();
+        return false;
+    }
+}
+
 
 
 
