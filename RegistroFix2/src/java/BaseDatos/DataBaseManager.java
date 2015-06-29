@@ -121,8 +121,15 @@ public class DataBaseManager {
         return null;
     }
 
-    public void editarNick(String tabla, String nuevo) {
-        
+    public void editarNick(String tabla, String nickAnt , String nuevo) {
+        Statement st = getStatement();
+        String nickNuevo = sqlFormat(nuevo);
+        String sql = "update " + tabla + " set nick = " + nickNuevo + " where nick = " ;
+        try {
+            st.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
     }
 
     public void editarPassword(String tabla, String nuevo) {
