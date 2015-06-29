@@ -30,7 +30,7 @@ function validarEmail(form) {
 }
 function validarPassword(form) {
     var expPassword = new RegExp("^[a-zA-Z]+[0-9]+$");
-    if (expPassword.test(form.password.value) && form.password.value >= 5) {
+    if (expPassword.test(form.password.value) && form.password.value.length >= 5) {
         return true;
     } else {
         alert('El password esta vacío o contiene formato incorrecto');
