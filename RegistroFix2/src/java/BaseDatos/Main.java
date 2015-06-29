@@ -2,7 +2,8 @@ package BaseDatos;
 
 /**
  *
- * @author Ana Teresa
+ * @author Ana Teresa Quesada Ramírez
+ * @author Juan Miguel Arias Mejías
  */
 public class Main {
 

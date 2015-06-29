@@ -1,11 +1,16 @@
-
 package beans;
 
 import java.io.Serializable;
 
+/**
+ * Clase con los métodos get y set de los datos importantes de un usuario
+ *
+ * @author Ana Teresa Quesada Ramírez
+ * @author Juan Miguel Arias Mejías
+ */
 public class User implements Serializable {
 
-    private String nick; 
+    private String nick;
     private String email;
     private String password;
 
@@ -44,7 +49,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" + "nick=" + nick  + ", email=" + email + ", password=" + password + '}';
+        return "User{" + "nick=" + nick + ", email=" + email + ", password=" + password + '}';
     }
 
 }

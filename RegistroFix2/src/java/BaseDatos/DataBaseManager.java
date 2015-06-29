@@ -8,18 +8,21 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
+ * Clase encargada del manejo de la conexión con la base de datos. Acciones como
+ * consulta, ingreso y modificación de un usuario en la tabla
  *
- * @author Ana Teresa
+ * @author Ana Teresa Quesada Ramírez
+ * @author Juan Miguel Arias Mejías
  */
 public class DataBaseManager {
 
-    static final String NOMBRE_TABLA = "users";
+    static final String TABLE_NAME = "users"; // nombre de la tabla de usuarios
 
     public DataBaseManager() {
-        cargarDriver();
+        loadDriver();
     }
 
-    private void cargarDriver() {
+    private void loadDriver() {
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -206,8 +209,8 @@ public class DataBaseManager {
         return "\"" + value + "\"";
     }
 
-    public static String getNOMBRE_TABLA() {
-        return NOMBRE_TABLA;
+    public static String getTABLE_NAME() {
+        return TABLE_NAME;
     }
 
 }
