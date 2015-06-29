@@ -121,10 +121,10 @@ public class DataBaseManager {
         return null;
     }
 
-    public void editarNick(String tabla, String nickAnt, String nuevo) {
+    public void editarNick(String tabla, String nickAntig, String nuevo) {
         Statement st = getStatement();
         String nickNuevo = sqlFormat(nuevo);
-        String sql = "update " + tabla + " set nick = " + nickNuevo + " where nick = " + sqlFormat(nickAnt);
+        String sql = "update " + tabla + " set nick = " + nickNuevo + " where nick = " + sqlFormat(nickAntig);
         try {
             st.executeUpdate(sql);
         } catch (SQLException e) {
@@ -133,11 +133,25 @@ public class DataBaseManager {
     }
 
     public void editarPassword(String tabla, String nick, String passwordAnt, String nuevo) {
-        // Tere hacer
+        Statement st = getStatement();
+        String passwordNueva = sqlFormat(nuevo);
+        String sql = "update " + tabla + " set password = " + passwordNueva + " where nick = " + sqlFormat(nick);
+        try {
+            st.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
     }
 
-    public void editarEmail(String tabla, String nuevo) {
-        // Tere hacer
+    public void editarEmail(String tabla, String emailAntig, String nuevo) {
+        Statement st = getStatement();
+        String emailNuevo = sqlFormat(nuevo);
+        String sql = "update " + tabla + " set email = " + emailNuevo + " where email = " + sqlFormat(emailAntig);
+        try {
+            st.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
     }
 
     private User nickLog(String tabla, String nick) {
