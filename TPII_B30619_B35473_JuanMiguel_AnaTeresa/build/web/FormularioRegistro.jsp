@@ -24,7 +24,7 @@
             <h2><jsp:getProperty name="JOP" property="msj"/></h2>
 
             <form id="form"  onsubmit="return formulario(this)" method="get" action="Registro.jsp">
-                <p>Complete los siguientes espacios</p>
+                <p>Para cambiar sus datos rellene los espacios</p>
 
                 <label>Nick: </label><br>
                 <input type="text" name="nick">

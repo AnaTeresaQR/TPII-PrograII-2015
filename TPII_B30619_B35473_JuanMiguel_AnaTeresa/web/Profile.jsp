@@ -12,6 +12,7 @@
         <title>Edit profile</title>
         <link rel='stylesheet' type="text/css" href='css/estiloRegistro.css'>
         <link rel="stylesheet" type="text/css" href="css/estiloProfile.css">
+        <script type="text/javascript" src="js/validaciones.js"></script> 
         <%@include file="html/header.html"%>
     </head>
     <body>
@@ -24,15 +25,35 @@
                 <th> - Email - </th>
                 <th> - Password - </th>
             </tr>
-
             <tr>
                 <td><jsp:getProperty name="user" property="unique"/></td>
                 <td><jsp:getProperty name="user" property="nick"/></td>
                 <td><jsp:getProperty name="user" property="email"/></td>
                 <td><jsp:getProperty name="user" property="password"/></td>
             </tr>
-        </table>
-            <br>
+        </table>        
+        <form id="form"  onsubmit="return formulario(this)" method="get" action="Registro.jsp">
+            <p>Complete los siguientes espacios</p>
+
+            <label>Nick: </label><br>
+            <input type="text" name="nick">
+            <br><br>
+
+            <label>Email: </label><br>
+            <input type="text" name="email">
+            <br><br>
+
+            <label>Password: </label><br>
+            <input type="password" name="password">
+            <br><br>
+
+            <input type='submit' value='Registrarme'>
+            <input type='reset' value="Limpiar">
+            <br><br>
+            <a href='LogIn.jsp'>Log In</a>
+
+        </form>
+        <br>
         <a href="Home.jsp">Home</a>
         <%@include file="html/footer.html"%>
     </body>
