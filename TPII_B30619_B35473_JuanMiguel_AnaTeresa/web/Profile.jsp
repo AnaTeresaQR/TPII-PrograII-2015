@@ -10,10 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit profile</title>
+        <link rel='stylesheet' type="text/css" href='css/estiloRegistro.css'>
         <link rel="stylesheet" type="text/css" href="css/estiloProfile.css">
         <%@include file="html/header.html"%>
     </head>
     <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
         <jsp:useBean id="user" scope="session" class="beans.User"/>
         <table>
             <tr>

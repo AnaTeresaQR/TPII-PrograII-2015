@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" href="css/estiloRegistro.css">
     </head>
     <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
     <Center id="ResultadoRegistro">
         <h1>Bienvenido a nuestra Web!</h1>
         <jsp:useBean id='user' scope="session" class="beans.User"/>

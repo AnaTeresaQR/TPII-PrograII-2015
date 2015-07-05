@@ -11,11 +11,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/stilos.css">
+        <link rel="stylesheet" type="text/css" href="css/estiloRegistro.css">
         <title>Lista de personajes disponibles</title>
         <%@include file="html/header.html" %>
     </head>
     <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
         <%
             String ruta = getServletContext().getRealPath("xml/personajes.xml");
             ManejadorXMLPersonajes manejador = new ManejadorXMLPersonajes(ruta);

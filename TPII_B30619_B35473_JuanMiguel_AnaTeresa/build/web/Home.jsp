@@ -13,10 +13,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel='stylesheet' type="text/css" href='css/estiloRegistro.css'>
         <title>Home page</title>
         <%@include file="html/header.html" %>
     </head>
     <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
         <jsp:useBean id="user" scope="session" class="beans.User"/>
         <%
             if (user.getNick().equalsIgnoreCase("guest")) {

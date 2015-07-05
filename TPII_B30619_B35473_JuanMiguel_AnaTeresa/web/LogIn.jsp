@@ -14,6 +14,7 @@
         <title>Comics ATJM</title>
     </head>
     <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
         <%@include file="html/header.html"%>
         <h1>Bienvenido</h1>
         <section>           

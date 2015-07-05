@@ -1,6 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `databaseusers` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `databaseusers`;
+-- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
 --
--- Host: localhost    Database: databaseusers
+-- Host: 127.0.0.1    Database: databaseusers
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -31,7 +33,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `nick_UNIQUE` (`nick`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,9 +42,17 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'root','root@gmail.com','jmam244595');
+INSERT INTO `users` VALUES (1,'tere','tere@gmail.com','tere'),(2,'root','root@gmail.com','root'),(3,'Juan14','juan@gmail.com','jmasdf1341242'),(5,'Juan16','juan15@gmail.com','jmam2445958'),(7,'Juan17','Juan17@gmail.com','jmam24459580'),(9,'tere2995','ana.quesada@ucrso.info','Pepe2995'),(22,'Juan18','juan18@gmail.com','jmam24459580'),(25,'anate2995','anateresa@hotmail.com','anateresa2995'),(29,'miguel09','miguel@ucr.com','juanmi09'),(31,'anateresa','ana@gmail.es','tereana29');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'databaseusers'
+--
+
+--
+-- Dumping routines for database 'databaseusers'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -53,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-04 21:59:40
+-- Dump completed on 2015-07-04 23:43:25

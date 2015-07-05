@@ -1,3 +1,17 @@
 #registro {
+    margin: 0 auto;
     text-align: center;
+}
+body {
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+}
+#imagen{
+    position:fixed;
+    top:0;
+    left:-40px;
+    margin: 0 auto;
+    right:0px;
+    z-index:-1;
 }

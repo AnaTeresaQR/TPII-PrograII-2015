@@ -16,6 +16,7 @@
         <script type="text/javascript" src="js/validaciones.js"></script> 
     </head>
     <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
         <div id="registro">
 
             <jsp:useBean id="JOP" scope="session" class="beans.JOP"/>

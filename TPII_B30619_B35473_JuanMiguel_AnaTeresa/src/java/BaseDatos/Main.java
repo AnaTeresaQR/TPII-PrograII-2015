@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package BaseDatos;
 
 import java.sql.SQLException;
@@ -21,7 +16,7 @@ public class Main {
         System.out.println(consultar.contenidoTabla());
         editar.editarNick("Juan15", "Juan16");
         System.out.println(consultar.contenidoTabla());
-        System.out.println(logIn.login("juan15@gmail.com", "jmam2445958").getUnique());
+     //   System.out.println(logIn.login("juan15@gmail.com", "jmam2445958").getUnique());
     }
 
 }
