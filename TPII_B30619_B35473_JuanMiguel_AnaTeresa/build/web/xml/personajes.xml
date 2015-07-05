@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personajes>
+
+    <personaje id="1">
+        <nombre>Ratio</nombre>
+        <descripcion>Parece un conejo</descripcion>
+        <personalidad>Brincador y muy jugueton</personalidad>
+        <img>img/Ratio.gif</img>
+    </personaje>
+
+    <personaje id="2">
+        <nombre>Angelina</nombre>
+        <descripcion>Parece una chiquita</descripcion>
+        <personalidad>Es feliz pero muy cruel</personalidad>
+        <img>img/angelina.gif</img>
+    </personaje>
+
+</personajes>
