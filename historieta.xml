@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Historieta -->
+<historieta>
+
+	<!-- Identificador de la historieta para poder cargarla y buscarla -->
+	<id></id>
+
+	<autores>
+
+		<!-- User es la persona que crea la historieta -->
+		<user></user>
+		<!-- En caso de que otra persona edite la historieta, debe haber almenos un usuario-->
+		<user></user>
+
+	</autores>
+
+	<!-- La lista de personajes participantes en la historieta -->
+	<personajes>
+		<!-- Personaje -->
+		<personaje></personaje>
+	</personajes>
+
+	<!-- Los cuadros de la historieta -->
+	<cuadros>
+		<cuadro></cuadro>
+	</cuadros>
+
+</historieta>

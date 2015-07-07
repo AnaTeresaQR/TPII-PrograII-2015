@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<historieta>
+    <id>Esa historia...</id>
+    <users>
+        <autor>
+            <nick>Nena</nick>
+            <name>Amanda</name>
+            <email>Agugu</email>
+            <password>234</password>
+        </autor>
+        <contribuyentes>
+            <nick>JM</nick>
+            <name>Juan</name>
+            <email>juan@gmail</email>
+            <password>123</password>
+        </contribuyentes>
+        <contribuyentes>
+            <nick>Te</nick>
+            <name>Tere</name>
+            <email>tere@gmail</email>
+            <password>321</password>
+        </contribuyentes>
+    </users>
+    <personajes>
+        <personaje>
+            <name>Juan</name>
+            <personalidad>Feliz</personalidad>
+            <foto>Dirreccion de imagen</foto>
+        </personaje>
+        <personaje>
+            <name>Tere</name>
+            <personalidad>Muy Feliz</personalidad>
+            <foto>Dirreccion de imagen</foto>
+        </personaje>
+    </personajes>
+</historieta>
