@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- root -->
+<historietas>
+
+<!--- ArrayList -->
+    <historieta>
+        <nombre>Conejito</nombre>
+        <autor>Miguel</autor>
+        <resumen>Había una vez un conejito saltarín</resumen>
+        <!-- ArrayList  -->
+        <cuadro>
+          <!-- HashTable<Integer, String> -->
+            <personaje>1</personaje>
+            <dialogo>Hola soy un conejito lindo</dialogo>
+
+            <personaje>2</personaje>
+            <dialogo>Hola conejito a mi me gusta tu color</dialogo>
+
+        </cuadro>
+
+        <cuadro>
+
+          <personaje>3</personaje>
+          <dialogo>Y a mi tambien</dialogo>
+
+          <personaje>1</personaje>
+          <dialogo>Muchas gracias todos son muy amables</dialogo>
+
+        </cuadro>
+    </historieta>
+
+    <historieta>
+        <nombre>La caminata</nombre>
+        <autor>Ana Teresa</autor>
+        <resumen>En una caminata en donde que solo los dioses pueden
+           lograr; miguel, el muchacho simple de la calle 7,
+            se decidio a enfrentar</resumen>
+        <!-- ArrayList  -->
+        <cuadro>
+          <!-- HashTable<Integer, String> -->
+            <personaje>1</personaje>
+            <dialogo>Hola soy miguel</dialogo>
+
+            <personaje>2</personaje>
+            <dialogo>Eres el mejor</dialogo>
+
+        </cuadro>
+
+        <cuadro>
+
+          <personaje>3</personaje>
+          <dialogo>Nunca pensé que podría conocerte</dialogo>
+
+          <personaje>1</personaje>
+          <dialogo>Muchas gracias todos son muy amables</dialogo>
+
+        </cuadro>
+    </historieta>
+
+</historietas>

@@ -12,7 +12,7 @@
         <title>Registro Comics</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' type="text/css" href='css/estiloRegistro.css'>
+        <link rel='stylesheet' type="text/css" href='css/estiloGeneral.css'>
         <script type="text/javascript" src="js/validaciones.js"></script> 
     </head>
     <body>
@@ -24,7 +24,7 @@
             <h2><jsp:getProperty name="JOP" property="msj"/></h2>
 
             <form id="form"  onsubmit="return formulario(this)" method="get" action="Registro.jsp">
-                <p>Para cambiar sus datos rellene los espacios</p>
+                <p>Complete los siguientes espacios</p>
 
                 <label>Nick: </label><br>
                 <input type="text" name="nick">

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 /**
  *
  * @author Juan Miguel Arias Mejias
+ * @author Ana Teresa Quesada Ramirez
  */
 public class Main {
 

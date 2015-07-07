@@ -13,6 +13,7 @@ import java.sql.Statement;
 /**
  *
  * @author Juan Miguel Arias Mejias
+ * @author Ana Teresa Quesada Ramirez
  */
 public class Conexion {
 
@@ -26,6 +27,9 @@ public class Conexion {
         loadDriver();
     }
 
+    /**
+     * Carga el driver encargado de la conexion de con la base de datos
+     */
     private void loadDriver() {
         try {
 
@@ -36,6 +40,11 @@ public class Conexion {
         }
     }
 
+    /**
+     * Crea una conexion con la base de datos
+     *
+     * @return una conexion
+     */
     public Connection conectarBaseDatos() {
         Connection c = null;
         try {
@@ -47,7 +56,12 @@ public class Conexion {
         }
         return c;
     }
-    
+
+    /**
+     * Crea un statement encargado de las sentencias
+     *
+     * @return Statement
+     */
     public Statement getStatement() {
 
         Statement st = null;
@@ -63,7 +77,11 @@ public class Conexion {
 
         return st;
     }
-    
+
+    /**
+     * Soluciona el problema de un String sin comillas
+     * @param value es el string al que le vamos a agregar las comillas
+     */
     public String sqlFormat(String value) {
         return "\"" + value + "\"";
     }

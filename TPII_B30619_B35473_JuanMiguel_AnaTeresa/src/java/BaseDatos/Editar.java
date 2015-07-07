@@ -11,9 +11,16 @@ import java.sql.Statement;
 /**
  *
  * @author Juan Miguel Arias Mejias
+ * @author Ana Teresa Quesada Ramirez
  */
 public class Editar extends Conexion {
 
+    /**
+     * Edita los datos de un usuario
+     *
+     * @param nickAntig es el nick antiguo del usuario
+     * @param nuevo es el nick con el que se va a reemplazar
+     */
     public void editarNick(String nickAntig, String nuevo) {
         Statement st = getStatement();
         String nickNuevo = sqlFormat(nuevo);
@@ -25,6 +32,13 @@ public class Editar extends Conexion {
         }
     }
 
+    /**
+     * Edita los datos de un usuario
+     *
+     * @param nick es el nick del usuario
+     * @param passwordAnt es el password antigua
+     * @param nuevo es la nueva contraseña
+     */
     public void editarPassword(String nick, String passwordAnt, String nuevo) {
         Statement st = getStatement();
         String passwordNueva = sqlFormat(nuevo);
@@ -35,5 +49,4 @@ public class Editar extends Conexion {
             System.err.println(e);
         }
     }
-
-}
+} // Fin clase

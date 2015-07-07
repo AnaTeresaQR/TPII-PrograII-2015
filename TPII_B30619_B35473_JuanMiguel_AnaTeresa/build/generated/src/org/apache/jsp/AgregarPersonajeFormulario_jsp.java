@@ -3,11 +3,10 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import xmlLogic.Personaje;
 import xmlLogic.Lista_Personajes;
 import xmlLogic.ManejadorXMLPersonajes;
 
-public final class ListaPersonajes_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class AgregarPersonajeFormulario_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -15,8 +14,9 @@ public final class ListaPersonajes_jsp extends org.apache.jasper.runtime.HttpJsp
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants = new java.util.ArrayList<String>(3);
     _jspx_dependants.add("/html/header.html");
+    _jspx_dependants.add("/html/menu.html");
     _jspx_dependants.add("/html/footer.html");
   }
 
@@ -59,8 +59,9 @@ public final class ListaPersonajes_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/stilos.css\">\n");
-      out.write("        <title>Lista de personajes disponibles</title>\n");
+      out.write("        <link rel='stylesheet' type=\"text/css\" href='css/estiloGeneral.css'>\n");
+      out.write("        <script type=\"text/javascript\" src=\"js/validaciones.js\"></script> \n");
+      out.write("        <title>Crea tu personaje</title>\n");
       out.write("        ");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<!--\r\n");
@@ -76,52 +77,62 @@ public final class ListaPersonajes_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("\n");
+      out.write("        ");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<!--\r\n");
+      out.write("To change this license header, choose License Headers in Project Properties.\r\n");
+      out.write("To change this template file, choose Tools | Templates\r\n");
+      out.write("and open the template in the editor.\r\n");
+      out.write("-->\r\n");
+      out.write("<nav id=\"menu\">\r\n");
+      out.write("    <ul>\r\n");
+      out.write("        <li><a href=\"index.jsp\">Pagina principal</a></li>\r\n");
+      out.write("        <li><a href=\"ListaPersonajes.jsp\">Lista personajes</a></li>\r\n");
+      out.write("    </ul>\r\n");
+      out.write("</nav>\r\n");
+      out.write("\n");
+      out.write("        <img id=\"imagen\" src=\"img/fondo.jpg\"  alt=\"background\" /> \n");
+      out.write("\n");
       out.write("        ");
 
-            String ruta = getServletContext().getRealPath("xml/personajes.xml");
+            // Obtengo la info del personaje
+            String ruta = getServletContext().getRealPath("/xmlFiles/personajes.xml");
             ManejadorXMLPersonajes manejador = new ManejadorXMLPersonajes(ruta);
             Lista_Personajes listaP = manejador.listaPersonajes();
         
       out.write("\n");
-      out.write("        <nav id=\"lista-personajes\">\n");
-      out.write("            <p>Lista Personajes</p>\n");
-      out.write("            <ul>\n");
-      out.write("                ");
-
-                    for (int i = 0; i < listaP.size(); i++) {
-                        Personaje temp = listaP.getPersonajes(i);
-                        int id = temp.getId();
-                        String nombre = temp.getNombre();
-                        String descripcion = temp.getDescripcion();
-                        String personalidad = temp.getPersonalidad();
-                        String foto = temp.getFoto();
-                
       out.write("\n");
-      out.write("                <li>\n");
-      out.write("                    <p>id: ");
-      out.print(id);
-      out.write("</p>\n");
-      out.write("                    <p>Nombre: ");
-      out.print(nombre);
-      out.write("</p>\n");
-      out.write("                    <p>Descripcion: ");
-      out.print(descripcion);
-      out.write("</p>\n");
-      out.write("                    <p>Personalidad: ");
-      out.print(personalidad);
-      out.write("</p>\n");
-      out.write("                    <img src=\"");
-      out.print(foto);
-      out.write("\">\n");
-      out.write("                </li>\n");
-      out.write("                ");
-
-                    }
-                
+      out.write("        <section id=\"section-crearPersonaje\">\n");
+      out.write("            <form id=\"form\"  onsubmit=\"return noVacios(this)\" method=\"get\" action=\"Registro.jsp\">\n");
+      out.write("                <p>Complete los siguientes espacios</p>\n");
       out.write("\n");
-      out.write("            </ul>\n");
-      out.write("        </nav>\n");
-      out.write("        ");
+      out.write("                <label>Nombre </label><br>\n");
+      out.write("                <input type=\"text\" name=\"nombre\">\n");
+      out.write("                <br><br>\n");
+      out.write("\n");
+      out.write("                <label>Descripcion </label><br>\n");
+      out.write("                <input type=\"text\" name=\"descripcion\">\n");
+      out.write("                <br><br>\n");
+      out.write("\n");
+      out.write("                <label>Personalidad </label><br>\n");
+      out.write("                <input type=\"text\" name=\"personalidad\">\n");
+      out.write("                <br><br>\n");
+      out.write("\n");
+      out.write("                <label>Encuentra tu foto</label><br>\n");
+      out.write("                <input type=\"file\" name=\"img\" accept=\"image/*\">\n");
+      out.write("                <br><br>\n");
+      out.write("\n");
+      out.write("                <input type='submit' value='Agregar personaje'>\n");
+      out.write("                <input type='reset' value=\"Limpiar\">\n");
+      out.write("                <br><br>\n");
+      out.write("\n");
+      out.write("            </form>\n");
+      out.write("        </section>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    </body>\n");
+      out.write("    ");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<!--\r\n");
       out.write("To change this license header, choose License Headers in Project Properties.\r\n");
@@ -132,7 +143,6 @@ public final class ListaPersonajes_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("    <p>TPII-Comics ATJM</p>\r\n");
       out.write("</footer>\r\n");
       out.write("\n");
-      out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -12,11 +12,17 @@ import java.sql.Statement;
 /**
  *
  * @author Juan Miguel Arias Mejias
+ * @author Ana Teresa Quesada Ramirez
  */
 public class Registrar extends Conexion {
 
+    /**
+     * Registra un usuario en la base de datos
+     * @param user es el usuario a ser registrado
+     * @throws SQLException error al registrar
+     */
     public void registrar(User user) throws SQLException {
-        
+
         Statement st = getStatement();
         String nick = sqlFormat(user.getNick());
         String email = sqlFormat(user.getEmail());
@@ -25,5 +31,4 @@ public class Registrar extends Conexion {
         String sql = "insert into " + TABLE_NAME + " (nick, email, password) values(" + nick + ", " + email + ", " + password + ")";
         st.executeUpdate(sql);
     }
-
-}
+ } // Fin clase

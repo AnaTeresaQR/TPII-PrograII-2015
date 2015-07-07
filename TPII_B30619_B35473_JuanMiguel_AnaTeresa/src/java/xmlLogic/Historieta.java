@@ -16,7 +16,7 @@ public class Historieta {
         this.cuadros = new ArrayList<>();
     }
 
-    Historieta() {
+    public Historieta() {
     }
 
     public void setCuadros(ArrayList<Cuadro> cuadros) {
@@ -63,6 +63,10 @@ public class Historieta {
         }
 
         return sb.toString();
+    }
+
+    public int cantidadCuadros() {
+        return this.cuadros.size();
     }
 
     @Override

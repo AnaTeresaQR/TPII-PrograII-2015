@@ -22,6 +22,21 @@ public class Lista_Historietas {
         return listaHistorietas.size();
     }
 
+    /**
+     * Busca una historieta por nombre
+     *
+     * @return devuelve una historieta
+     * @param nombre
+     */
+    public Historieta buscarPorNombre(String nombre) {
+        for (int i = 0; i < listaHistorietas.size(); i++) {
+            if (listaHistorietas.get(i).getNombre().equals(nombre)) {
+                return listaHistorietas.get(i);
+            }
+        }
+        return null;
+    }
+
     public String imprimir() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < listaHistorietas.size(); i++) {

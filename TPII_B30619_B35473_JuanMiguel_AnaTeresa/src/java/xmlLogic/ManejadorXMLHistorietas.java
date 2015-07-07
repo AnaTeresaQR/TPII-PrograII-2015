@@ -26,23 +26,15 @@ public class ManejadorXMLHistorietas {
     Document document;
     XPath xPath;
 
-    public ManejadorXMLHistorietas(String ruta) {
-        try {
-            listaHistorietas = new Lista_Historietas();
-            file = new FileInputStream(ruta);
-            factory = DocumentBuilderFactory.newInstance();
-            builder = factory.newDocumentBuilder();
-            document = builder.parse(file);
-            xPath = XPathFactory.newInstance().newXPath();
-        } catch (FileNotFoundException ex) {
-            System.out.println("XML no encontrado");
-        } catch (SAXException | IOException ex) {
-            System.out.println("Error IO init clase ManejadorXMLPersonajes\n" + ex.getMessage());
-        } catch (ParserConfigurationException ex) {
-            System.out.println("Error al parsear la configuración");
-        }
+    public ManejadorXMLHistorietas() {
+
     }
 
+    /**
+     * Carga el archivo xml y lo coloca en una lista
+     *
+     * @return una lista con las historietas
+     */
     public Lista_Historietas ListaHistorietas() {
         try {
             NodeList listaNodos = (NodeList) xPath.compile(expresion).evaluate(document, XPathConstants.NODESET);
@@ -110,10 +102,16 @@ public class ManejadorXMLHistorietas {
         return listaHistorietas;
     }
 
+    /**
+     * Imprime el contenido de la historieta
+     */
     public String imprimir() {
         return listaHistorietas.imprimir();
     }
 
+    /**
+     * Llena la hashtable
+     */
     private ImitacionHashtable fillHash(ArrayList<Integer> ids, ArrayList<String> dialogos) {
 
         ImitacionHashtable<Integer, String> ht = new ImitacionHashtable<>();
@@ -127,6 +125,33 @@ public class ManejadorXMLHistorietas {
             return ht;
         }
         return null;
+    }
+
+    public void agregarHistorieta(Historieta h) {
+
+    }
+
+    /**
+     * Especifica la ruta del archivo e inicializa los componentes necesarios
+     * para la lectura
+     *
+     * @param ruta es la direccion del archivo a ser cargado
+     */
+    public void setRuta(String ruta) {
+        try {
+            listaHistorietas = new Lista_Historietas();
+            file = new FileInputStream(ruta);
+            factory = DocumentBuilderFactory.newInstance();
+            builder = factory.newDocumentBuilder();
+            document = builder.parse(file);
+            xPath = XPathFactory.newInstance().newXPath();
+        } catch (FileNotFoundException ex) {
+            System.out.println("XML no encontrado");
+        } catch (SAXException | IOException ex) {
+            System.out.println("Error IO init clase ManejadorXMLPersonajes\n" + ex.getMessage());
+        } catch (ParserConfigurationException ex) {
+            System.out.println("Error al parsear la configuración");
+        }
     }
 
 }

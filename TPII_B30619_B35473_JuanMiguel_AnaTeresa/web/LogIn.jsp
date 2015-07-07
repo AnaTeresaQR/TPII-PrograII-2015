@@ -9,13 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel='stylesheet' type="text/css" href='css/estiloRegistro.css'>
+        <link rel='stylesheet' type="text/css" href='css/estiloGeneral.css'>
         <script type="text/javascript" src="js/validaciones.js"></script> 
         <title>Comics ATJM</title>
     </head>
     <body>
         <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
         <%@include file="html/header.html"%>
+        <%@include file="html/menu.html" %>
         <h1>Bienvenido</h1>
         <section>           
             <form  id="login"  onsubmit="return logIn(this)" method="get" action="ResultadoLogin.jsp">

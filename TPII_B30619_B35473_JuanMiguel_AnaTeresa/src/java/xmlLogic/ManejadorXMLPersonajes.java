@@ -1,17 +1,25 @@
 package xmlLogic;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -42,8 +50,15 @@ public class ManejadorXMLPersonajes {
         }
     }
 
+    /**
+     * Carga u archivo xml para extraer la informacion de los personajes
+     *
+     * @return lista con los personajes cargados
+     */
     public Lista_Personajes listaPersonajes() {
+        Lista_Personajes lista = new Lista_Personajes();
         try {
+
             NodeList listaNodos = (NodeList) xPath.compile(expresion).evaluate(document, XPathConstants.NODESET);
             for (int i = 0; i < listaNodos.getLength(); i++) {
                 Element element = (Element) listaNodos.item(i);
@@ -52,15 +67,69 @@ public class ManejadorXMLPersonajes {
                 String descripcion = element.getElementsByTagName("descripcion").item(0).getFirstChild().getNodeValue();
                 String personalidad = element.getElementsByTagName("personalidad").item(0).getFirstChild().getNodeValue();
                 String img = element.getElementsByTagName("img").item(0).getFirstChild().getNodeValue();
-                listaPersonajes.agregar(new Personaje(id, nombre, descripcion, personalidad, img));
+                lista.agregar(new Personaje(id, nombre, descripcion, personalidad, img));
             }
         } catch (XPathExpressionException ex) {
             System.out.println("Error al compilar documento XML");
+        } finally {
+            this.listaPersonajes = lista;
         }
-        return listaPersonajes;
+        return lista;
+    }
+
+    /**
+     * Agrega un personaje al archivo xml
+     *
+     * @param personaje es el personaje a agregar
+     * @param ruta es la dirrecion del archivo en donde sera agregado el
+     * personaje
+     *
+     * @throws TransformerException error al guardar
+     */
+    public void agregarPersonaje(Personaje personaje, String ruta) throws TransformerException {
+
+        try {
+
+            Node root = document.getElementsByTagName("personajes").item(0);
+            Element nueva = document.createElement("personaje");
+            Attr id = document.createAttribute("id");
+            id.setValue(listaPersonajes().size() + "");
+            nueva.setAttributeNode(id);
+
+            Element nombre = document.createElement("nombre");
+            nombre.appendChild(document.createTextNode(personaje.getNombre()));
+            Element descripcion = document.createElement("descripcion");
+            descripcion.appendChild(document.createTextNode(personaje.getDescripcion()));
+            Element personalidad = document.createElement("personalidad");
+            personalidad.appendChild(document.createTextNode(personaje.getPersonalidad()));
+            Element foto = document.createElement("img");
+            foto.appendChild(document.createTextNode(personaje.getFoto()));
+
+            nueva.appendChild(nombre);
+            nueva.appendChild(descripcion);
+            nueva.appendChild(personalidad);
+            nueva.appendChild(foto);
+
+            root.appendChild(nueva);
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource domSource = new DOMSource(document);
+
+            StreamResult streamResult = new StreamResult(new File(ruta));
+            transformer.transform(domSource, streamResult);
+
+        } catch (TransformerException e) {
+            System.err.println("ManejadorXMLPersonajes - agregarPersonaje" + e);
+        }
     }
 
     public String imprimir() {
         return listaPersonajes.imprimir();
     }
+
+    public Lista_Personajes getListaPersonajes() {
+        return listaPersonajes;
+    }
+
 }

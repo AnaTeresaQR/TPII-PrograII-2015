@@ -13,6 +13,7 @@ import java.sql.Statement;
 /**
  *
  * @author Juan Miguel Arias Mejias
+ * @author Ana Teresa Quesada Ramirez
  */
 public class LogIn extends Conexion {
 

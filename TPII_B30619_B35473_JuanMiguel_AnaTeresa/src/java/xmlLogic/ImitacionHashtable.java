@@ -88,6 +88,20 @@ public class ImitacionHashtable<Claves, Valores> {
     }
 
     /**
+     * Obtiene una valor por indice
+     */
+    public Valores getValor(int i) {
+        return valores.get(i);
+    }
+
+    /**
+     * Obtiene una clase por indice
+     */
+    public Claves getClave(int i) {
+        return claves.get(i);
+    }
+
+    /**
      * Método que verifica si existe un valor, perteneciente a una clave en la
      * lista
      *
@@ -117,7 +131,5 @@ public class ImitacionHashtable<Claves, Valores> {
             }
         }
     }
-    
-    
 
 } // Fin de la clase

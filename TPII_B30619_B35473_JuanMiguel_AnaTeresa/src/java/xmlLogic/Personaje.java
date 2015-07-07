@@ -1,6 +1,5 @@
 package xmlLogic;
 
-
 public class Personaje {
 
     private int id;
@@ -11,6 +10,13 @@ public class Personaje {
 
     public Personaje(int id, String nombre, String descripcion, String personalidad, String foto) {
         this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.personalidad = personalidad;
+        this.foto = foto;
+    }
+
+    public Personaje(String nombre, String descripcion, String personalidad, String foto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.personalidad = personalidad;
