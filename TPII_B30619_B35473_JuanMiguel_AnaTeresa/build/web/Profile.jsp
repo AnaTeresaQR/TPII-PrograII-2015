@@ -10,10 +10,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit profile</title>
+<<<<<<< HEAD
+=======
+        <link rel='stylesheet' type="text/css" href='css/estiloGeneral.css'>
+>>>>>>> origin/Rama-JSP
         <link rel="stylesheet" type="text/css" href="css/estiloProfile.css">
         <%@include file="html/header.html"%>
     </head>
     <body>
+<<<<<<< HEAD
+=======
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
+        <%@include file="html/menu.html" %>
+>>>>>>> origin/Rama-JSP
         <jsp:useBean id="user" scope="session" class="beans.User"/>
         <table>
             <tr>

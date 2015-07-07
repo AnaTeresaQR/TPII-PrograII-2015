@@ -3,10 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
 
 package BaseDatos;
 
 import beans.User;
+=======
+package BaseDatos;
+
+>>>>>>> origin/Rama-JSP
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,9 +19,21 @@ import java.sql.Statement;
 /**
  *
  * @author Juan Miguel Arias Mejias
+<<<<<<< HEAD
  */
 public class Consultar extends Conexion{
     
+=======
+ * @author Ana Teresa Quesada Ramirez
+ */
+public class Consultar extends Conexion {
+
+    /**
+     * Retorna el contenido de la tabla en forma de matriz
+     *
+     * @return contenido de base de datos
+     */
+>>>>>>> origin/Rama-JSP
     public String contenidoTabla() {
 
         Statement st = getStatement();
@@ -38,5 +55,8 @@ public class Consultar extends Conexion{
 
         return sb.toString();
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Rama-JSP
 }

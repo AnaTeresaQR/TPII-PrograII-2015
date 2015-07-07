@@ -11,11 +11,19 @@
         <title>Comics ATJM</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
         <%@include file="html/header.html"%>
     </head>
     <body>
 
 
+=======
+        <link rel='stylesheet' type="text/css" href='css/estiloGeneral.css'>
+        <%@include file="html/header.html"%>
+    </head>
+    <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
+>>>>>>> origin/Rama-JSP
         <jsp:useBean id="user" scope="session" class="beans.User"/>
 
     <center>
@@ -29,11 +37,19 @@
         <br>
 
         <h4>Instrucciones:</h4>
+<<<<<<< HEAD
         <p>1. </p>
         <p>2. </p>
         <p>3. </p>
         <p>4. </p>
         <p>5. </p>
+=======
+        <p>1. Registrate</p>
+        <p>2. Loggeate</p>
+        <p>3. Empieza a leer</p>
+        <p>4. Visita la lista de personajes</p>
+        <p>5. Crea un personaje</p>
+>>>>>>> origin/Rama-JSP
 
         <br>
 

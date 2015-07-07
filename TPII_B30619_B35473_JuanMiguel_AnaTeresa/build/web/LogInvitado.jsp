@@ -9,9 +9,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
         <title>JSP Page</title>
     </head>
     <body>
+=======
+        <link rel='stylesheet' type="text/css" href='css/estiloGeneral.css'>
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
+>>>>>>> origin/Rama-JSP
         <jsp:useBean id="user" scope="session" class="beans.User"/>
         <jsp:setProperty name="user" property="nick" value="guest"/>
         <jsp:setProperty name="user" property="email" value="guest@gmail.com"/>

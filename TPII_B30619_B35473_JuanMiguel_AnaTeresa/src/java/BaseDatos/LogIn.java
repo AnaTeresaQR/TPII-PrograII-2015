@@ -13,6 +13,10 @@ import java.sql.Statement;
 /**
  *
  * @author Juan Miguel Arias Mejias
+<<<<<<< HEAD
+=======
+ * @author Ana Teresa Quesada Ramirez
+>>>>>>> origin/Rama-JSP
  */
 public class LogIn extends Conexion {
 

@@ -58,5 +58,39 @@ function validarIdentificador(form) {
     }
 }
 
+<<<<<<< HEAD
+=======
+function noVacios(form) {
+    if (form.nombre.value != "") {
+
+        if (form.personalidad.value != "") {
+
+            if (form.descripcion.value != "") {
+
+                if (form.img.value != "") {
+                    return true;
+                }
+                // no foto
+                alert('Debes darnos una foto');
+                form.img.focus();
+                return false;
+            }
+            // no descripcion
+            alert('Debes poder describirlo');
+            form.descripcion.focus();
+            return false;
+        }
+        // no personalidad
+        alert('Debes poder poner su personalidad');
+        form.personalidad.focus();
+        return false;
+    }
+    // no nombre
+    alert('Vamos, debes saber su nombre');
+    form.nombre.focus();
+    return false;
+}
+
+>>>>>>> origin/Rama-JSP
 
 

@@ -12,10 +12,18 @@
         <title>Registro Comics</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
         <link rel='stylesheet' type="text/css" href='css/estiloRegistro.css'>
         <script type="text/javascript" src="js/validaciones.js"></script> 
     </head>
     <body>
+=======
+        <link rel='stylesheet' type="text/css" href='css/estiloGeneral.css'>
+        <script type="text/javascript" src="js/validaciones.js"></script> 
+    </head>
+    <body>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
+>>>>>>> origin/Rama-JSP
         <div id="registro">
 
             <jsp:useBean id="JOP" scope="session" class="beans.JOP"/>

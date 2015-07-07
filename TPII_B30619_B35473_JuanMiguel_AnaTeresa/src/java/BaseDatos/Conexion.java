@@ -13,6 +13,10 @@ import java.sql.Statement;
 /**
  *
  * @author Juan Miguel Arias Mejias
+<<<<<<< HEAD
+=======
+ * @author Ana Teresa Quesada Ramirez
+>>>>>>> origin/Rama-JSP
  */
 public class Conexion {
 
@@ -26,6 +30,12 @@ public class Conexion {
         loadDriver();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Carga el driver encargado de la conexion de con la base de datos
+     */
+>>>>>>> origin/Rama-JSP
     private void loadDriver() {
         try {
 
@@ -36,6 +46,14 @@ public class Conexion {
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Crea una conexion con la base de datos
+     *
+     * @return una conexion
+     */
+>>>>>>> origin/Rama-JSP
     public Connection conectarBaseDatos() {
         Connection c = null;
         try {
@@ -47,7 +65,16 @@ public class Conexion {
         }
         return c;
     }
+<<<<<<< HEAD
     
+=======
+
+    /**
+     * Crea un statement encargado de las sentencias
+     *
+     * @return Statement
+     */
+>>>>>>> origin/Rama-JSP
     public Statement getStatement() {
 
         Statement st = null;
@@ -63,7 +90,15 @@ public class Conexion {
 
         return st;
     }
+<<<<<<< HEAD
     
+=======
+
+    /**
+     * Soluciona el problema de un String sin comillas
+     * @param value es el string al que le vamos a agregar las comillas
+     */
+>>>>>>> origin/Rama-JSP
     public String sqlFormat(String value) {
         return "\"" + value + "\"";
     }

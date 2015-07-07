@@ -1,6 +1,9 @@
 package xmlLogic;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Rama-JSP
 public class Personaje {
 
     private int id;
@@ -17,6 +20,16 @@ public class Personaje {
         this.foto = foto;
     }
 
+<<<<<<< HEAD
+=======
+    public Personaje(String nombre, String descripcion, String personalidad, String foto) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.personalidad = personalidad;
+        this.foto = foto;
+    }
+
+>>>>>>> origin/Rama-JSP
     public int getId() {
         return id;
     }

@@ -16,7 +16,11 @@ public class Historieta {
         this.cuadros = new ArrayList<>();
     }
 
+<<<<<<< HEAD
     Historieta() {
+=======
+    public Historieta() {
+>>>>>>> origin/Rama-JSP
     }
 
     public void setCuadros(ArrayList<Cuadro> cuadros) {
@@ -65,6 +69,13 @@ public class Historieta {
         return sb.toString();
     }
 
+<<<<<<< HEAD
+=======
+    public int cantidadCuadros() {
+        return this.cuadros.size();
+    }
+
+>>>>>>> origin/Rama-JSP
     @Override
     public String toString() {
         return "Historieta{" + "nombre=" + nombre + ", autor=" + autor + ", resumen=" + resumen + ", cuadros=" + this.imprimirCuadros() + '}';

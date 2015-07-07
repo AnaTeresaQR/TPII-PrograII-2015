@@ -9,12 +9,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
         <link rel='stylesheet' type="text/css" href='css/estiloRegistro.css'>
+=======
+        <link rel='stylesheet' type="text/css" href='css/estiloGeneral.css'>
+>>>>>>> origin/Rama-JSP
         <script type="text/javascript" src="js/validaciones.js"></script> 
         <title>Comics ATJM</title>
     </head>
     <body>
+<<<<<<< HEAD
         <%@include file="html/header.html"%>
+=======
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
+        <%@include file="html/header.html"%>
+        <%@include file="html/menu.html" %>
+>>>>>>> origin/Rama-JSP
         <h1>Bienvenido</h1>
         <section>           
             <form  id="login"  onsubmit="return logIn(this)" method="get" action="ResultadoLogin.jsp">

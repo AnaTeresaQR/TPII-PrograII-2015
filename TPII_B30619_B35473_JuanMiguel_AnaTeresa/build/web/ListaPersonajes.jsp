@@ -11,13 +11,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
         <link rel="stylesheet" type="text/css" href="css/stilos.css">
+=======
+        <link rel="stylesheet" type="text/css" href="css/estiloGeneral.css">
+>>>>>>> origin/Rama-JSP
         <title>Lista de personajes disponibles</title>
         <%@include file="html/header.html" %>
     </head>
     <body>
+<<<<<<< HEAD
         <%
             String ruta = getServletContext().getRealPath("xml/personajes.xml");
+=======
+        <%@include file="html/menu.html" %>
+        <img id="imagen" src="img/fondo.jpg"  alt="background" /> 
+        <%
+            // Obtengo la info del personaje
+            String ruta = getServletContext().getRealPath("/xmlFiles/personajes.xml");
+>>>>>>> origin/Rama-JSP
             ManejadorXMLPersonajes manejador = new ManejadorXMLPersonajes(ruta);
             Lista_Personajes listaP = manejador.listaPersonajes();
         %>
@@ -38,7 +50,11 @@
                     <p>Nombre: <%=nombre%></p>
                     <p>Descripcion: <%=descripcion%></p>
                     <p>Personalidad: <%=personalidad%></p>
+<<<<<<< HEAD
                     <img src="<%=foto%>">
+=======
+                    <img src="<%=foto%>" alt="personaje">
+>>>>>>> origin/Rama-JSP
                 </li>
                 <%
                     }

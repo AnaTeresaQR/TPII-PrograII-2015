@@ -88,6 +88,23 @@ public class ImitacionHashtable<Claves, Valores> {
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Obtiene una valor por indice
+     */
+    public Valores getValor(int i) {
+        return valores.get(i);
+    }
+
+    /**
+     * Obtiene una clase por indice
+     */
+    public Claves getClave(int i) {
+        return claves.get(i);
+    }
+
+    /**
+>>>>>>> origin/Rama-JSP
      * Método que verifica si existe un valor, perteneciente a una clave en la
      * lista
      *
@@ -117,7 +134,10 @@ public class ImitacionHashtable<Claves, Valores> {
             }
         }
     }
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> origin/Rama-JSP
 
 } // Fin de la clase
